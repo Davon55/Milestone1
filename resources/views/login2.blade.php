@@ -1,0 +1,29 @@
+@extends('layouts.appmaster')
+@section('title', 'Login Page')
+
+@section('content')
+<form action ="dologin2" method = "POST">
+	<input type = "hidden" name="_token" value ="<?php echo csrf_token() ?>"/>
+	<h2> Please Login</h2>                     
+	<table>
+		<tr>
+			<td>User Name: </td>
+			<td><input type ="text" name= "username" /></td>
+		</tr>
+		
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="password" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="hidden" name="role" /></td>
+		</tr>
+		<tr>
+			<td colspan ="2" align ="center">
+				<input type="Submit" value="Login"/><br> <a href="Register2">Register</a>
+	    </td>
+     </tr>
+   </table>
+ </form>
+ @endsection
